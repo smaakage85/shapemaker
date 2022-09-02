@@ -15,7 +15,7 @@ The template includes:
 
 `shapemaker` builds on the [Bring Your Own Container (BYOC)](https://towardsdatascience.com/bring-your-own-container-with-amazon-sagemaker-37211d8412f4) Sagemaker functionality for full developer control.
 
-`shapemaker` targets *full-stack* data scientists with basic knowledge of python, Amazon Sagemaker (BYOC) as well as AWS in general, docker, shell scripting, python and development of web applications.
+`shapemaker` targets *full-stack* data scientists with basic knowledge of python, Amazon Sagemaker (BYOC) as well as AWS in general, docker, shell scripting and development of web applications.
 
 ## :movie_camera: Demo
 
