@@ -1,4 +1,4 @@
-# shapemaker <img src='logo.png' align="right" height="65" />
+# shapemaker <img src='logo.jpg' align="right" height="90" />
 
 ## :eyeglasses: Overview
 
