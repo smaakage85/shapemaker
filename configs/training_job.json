@@ -1,0 +1,30 @@
+{
+    "TrainingJobName": "${TRAINING_JOB_NAME}",
+    "AlgorithmSpecification": {
+        "TrainingImage": "${ECR}/${ECR_REPO}:${PROJECT_NAME}.training",
+        "TrainingInputMode": "File",
+        "MetricDefinitions" : [
+            {
+                "Name": "train:RMSE",
+                "Regex": "Train_RMSE=([0-9\\.]+)"
+            }
+        ]
+    },
+    "RoleArn": "${SAGEMAKER_ROLE_ARN}",
+    "OutputDataConfig": {
+        "S3OutputPath": "${S3_OUTPUT_PATH}"
+    },
+    "HyperParameters": {
+        "n_obs": "2000"
+    }, 
+    "EnableManagedSpotTraining": true,
+    "ResourceConfig": {     
+        "InstanceType": "ml.m5.large",
+        "InstanceCount": 1,
+        "VolumeSizeInGB": 2
+     },
+    "StoppingCondition": {  
+        "MaxRuntimeInSeconds": 600,
+        "MaxWaitTimeInSeconds": 900
+    }
+}

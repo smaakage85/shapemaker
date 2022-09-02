@@ -1,0 +1,11 @@
+{
+    "EndpointConfigName": "${MODEL_NAME}",
+    "ProductionVariants": [
+        {
+            "VariantName": "AllTraffic",
+            "ModelName": "${MODEL_NAME}",
+            "InitialInstanceCount": 1,
+            "InstanceType": "ml.t2.medium"
+        }
+    ]
+}

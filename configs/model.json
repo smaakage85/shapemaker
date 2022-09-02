@@ -1,0 +1,9 @@
+{
+    "ModelName": "${MODEL_NAME}",
+    "PrimaryContainer": {
+        "Image": "${ECR}/${ECR_REPO}:${PROJECT_NAME}.endpoint",
+        "ModelDataUrl": "${MODEL_DATA}",
+        "Environment": {}
+    },
+    "ExecutionRoleArn": "${SAGEMAKER_ROLE_ARN}"
+}

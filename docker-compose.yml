@@ -1,0 +1,33 @@
+version: '3.7'
+
+services:
+
+  training:
+    image: ${PROJECT_NAME}.training:latest
+    build: 
+      dockerfile: ./images/training/Dockerfile
+      context: .
+      args:
+        - PY_VERSION=${PY_VERSION}
+        - AWS_DEFAULT_REGION=${AWS_DEFAULT_REGION}
+        - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
+        - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
+    volumes: 
+      - ${DIR_MODEL_LOCAL}:/opt/ml/model
+    command: python train.py
+    
+  endpoint:
+    image: ${PROJECT_NAME}.endpoint:latest
+    build: 
+      dockerfile: ./images/endpoint/Dockerfile
+      context: .
+      args:
+        - PY_VERSION=${PY_VERSION}
+        - AWS_DEFAULT_REGION=${AWS_DEFAULT_REGION}
+        - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
+        - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
+    ports:
+      - "8080:8080"
+    volumes: 
+      - ${DIR_MODEL_LOCAL}:/opt/ml/model
+    command: serve

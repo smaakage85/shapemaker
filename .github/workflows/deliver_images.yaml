@@ -1,0 +1,95 @@
+name: Deliver Images
+
+on:
+  push:
+    paths-ignore:
+      - "**/README.md"
+      - ".gitignore"
+
+jobs:
+  run_tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Export environment variables
+        uses: HatsuneMiku3939/direnv-action@v1
+      - name: Configure AWS credentials 
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ env.AWS_DEFAULT_REGION }}
+      - name: Set up python
+        uses: actions/setup-python@v2
+        with:
+          python-version: ${{ env.PY_VERSION }}
+      - name: Cache PIP packages
+        uses: actions/cache@v3
+        if: startsWith(runner.os, 'Linux')
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('requirements_modelpkg.txt')}}-${{ hashFiles('requirements_dev.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+      - name: PIP install requirements          
+        if: steps.cache-pip.outputs.cache-hit != 'true'
+        run: |
+          pip install -r requirements_modelpkg.txt -r requirements_dev.txt
+      - name: Run unit tests
+        run: make run_tests
+  provision_infrastructure:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Export environment variables
+        uses: HatsuneMiku3939/direnv-action@v1
+      - name: Configure AWS credentials 
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ env.AWS_DEFAULT_REGION }}
+      - name: Provision infrastructure
+        run: make infrastructure
+  deliver_training_image:
+    needs: [run_tests, provision_infrastructure]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Export environment variables
+        uses: HatsuneMiku3939/direnv-action@v1
+      - name: Configure AWS credentials 
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ env.AWS_DEFAULT_REGION }}
+      - name: Build docker image
+        if: github.ref == 'refs/heads/main'
+        run: make build_training_image
+      - name: Push image to AWS ECR
+        if: github.ref == 'refs/heads/main'
+        run: make push_training_image
+  deliver_endpoint_image:
+    needs: [run_tests, provision_infrastructure]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Export environment variables
+        uses: HatsuneMiku3939/direnv-action@v1
+      - name: Configure AWS credentials 
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ env.AWS_DEFAULT_REGION }}
+      - name: Build docker image
+        if: github.ref == 'refs/heads/main'
+        run: make build_endpoint_image
+      - name: Push image to AWS ECR
+        if: github.ref == 'refs/heads/main'
+        run: make push_endpoint_image

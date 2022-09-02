@@ -1,0 +1,10 @@
+.vscode/
+venv/
+.venv/
+artifacts/
+dist/
+__pycache__
+*.pickle
+*.pkl
+*.npy
+*.zip
