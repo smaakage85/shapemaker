@@ -15,19 +15,23 @@ Help()
   echo "h     Print this Help."
   echo "u     Update endpoint? Defaults to 'false'."
   echo "m     Model data url. Defaults to latest model artifact."
+  echo "w     Wait for endpoint to be in service. Defaults to"
+  echo "      'false'."
   echo
 }
 
 # Args
 UPDATE_ENDPOINT='false'
 ENDPOINT_NAME=${PROJECT_NAME}
-while getopts 'e::hm:u' flag; do
+WAIT='false'
+while getopts 'e::hm:uw' flag; do
   case "${flag}" in
     e) ENDPOINT NAME=${OPTARG} ;;
     h) Help
        exit;;
     m) MODEL_DATA=${OPTARG} ;;
     u) UPDATE_ENDPOINT='true' ;;
+    w) WAIT='true' ;;
   esac
 done
 
@@ -65,4 +69,10 @@ else
   echo "Updating endpoint.."
   aws sagemaker update-endpoint --endpoint-name ${ENDPOINT_NAME} \
     --endpoint-config-name ${MODEL_NAME}
+fi
+
+if ${WAIT}; then
+  echo "Waiting for endpoint to be in service.."               
+  aws sagemaker wait endpoint-in-service --endpoint-name ${ENDPOINT_NAME}
+  echo "Endpoint in service."
 fi

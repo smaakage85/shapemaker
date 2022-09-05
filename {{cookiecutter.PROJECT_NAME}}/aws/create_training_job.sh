@@ -41,6 +41,6 @@ aws sagemaker create-training-job --cli-input-json file://${DIR_TMP}/${JSON_TRAI
 if ${WAIT}; then
   echo "Waiting for training job to complete.."               
   aws sagemaker wait training-job-completed-or-stopped --training-job-name ${TRAINING_JOB_NAME}
-  echo "Completed."
+  echo "Training job completed."
 fi
-echo ${S3_OUTPUT_PATH}/${TRAINING_JOB_NAME}
+echo ${S3_OUTPUT_PATH}/${TRAINING_JOB_NAME}/output/model.tar.gz

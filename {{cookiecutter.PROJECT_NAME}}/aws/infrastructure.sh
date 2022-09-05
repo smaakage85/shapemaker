@@ -26,7 +26,10 @@ fi
 # If the S3 bucket doesn't exist, create it
 if ! aws s3api head-bucket --bucket ${BUCKET_ARTIFACTS} 2>/dev/null; then
   echo "Creating artifacts S3 bucket: ${BUCKET_ARTIFACTS}"
-  aws s3 create-bucket --bucket ${BUCKET_ARTIFACTS}
+  aws s3api create-bucket \
+    --bucket ${BUCKET_ARTIFACTS} \
+    --region ${AWS_DEFAULT_REGION} \
+    --create-bucket-configuration LocationConstraint=${AWS_DEFAULT_REGION}
 fi
 
 echo "Done."
