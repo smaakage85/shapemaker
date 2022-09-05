@@ -21,7 +21,7 @@ The template includes:
 
 The intention with `shapemaker` is to do as much work as possible in automated workflows. However, a `shapemaker` offers a lot of nifty shell commands put on display in the video below.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/XzxKWkj6svc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+[![Watch the video](https://img.youtube.com/vi/XzxKWkj6svc/maxresdefault.jpg)](https://youtu.be/XzxKWkj6svc)
 
 ## :computer: Requirements
 
