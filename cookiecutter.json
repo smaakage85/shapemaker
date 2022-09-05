@@ -1,9 +1,9 @@
 {
-    "PROJECT_NAME": "fireworks",
+    "PROJECT_NAME": null,
     "PY_VERSION": "3.8",
     "DIR_MODEL_LOCAL": "./artifacts",
     "DIR_TMP": "/tmp",
-    "AWS_ACCOUNT_ID": "691513757250",
+    "AWS_ACCOUNT_ID": "",
     "AWS_DEFAULT_REGION": "eu-west-1",
     "ECR_REPO": "sagemaker",
     "SAGEMAKER_ROLE": "SagemakerRole",
