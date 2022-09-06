@@ -19,7 +19,7 @@ The template includes:
 
 ## :movie_camera: Demo
 
-The intention with `shapemaker` is to do as much work as possible in automated workflows. However, a `shapemaker` offers a lot of nifty shell commands put on display in the video below.
+The intention with `shapemaker` is to do as much work as possible in automated workflows. However, a `shapemaker` offers a lot of nifty shell commands you can use on the fly. Some of these functions are put on display in the video below. *Click to watch*.
 
 [![Watch the video](https://img.youtube.com/vi/XzxKWkj6svc/maxresdefault.jpg)](https://youtu.be/XzxKWkj6svc)
 
@@ -73,6 +73,3 @@ All tasks related to interacting with the model project are implemented with she
 ## :repeat: Enable Automation Workflows
 
 Connect the Github Repository with your AWS account by providing your AWS credentials as secrets in your `Github` repository with names *AWS_ACCESS_KEY_ID* and *AWS_SECRET_ACCESS_KEY*.
-
-
-# shapemaker
