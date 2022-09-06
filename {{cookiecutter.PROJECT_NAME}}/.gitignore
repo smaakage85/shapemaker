@@ -1,6 +1,5 @@
 .vscode/
 venv/
-.venv/
 artifacts/
 dist/
 __pycache__
