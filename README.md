@@ -56,7 +56,7 @@ The template was tested on Linux Ubuntu 22.04 LTS w/AWS CLI v2.
     ├── aws/                      # Shell scripts for integrating the project with Sagemaker.
     ├── configs/                  # Configurations for Sagemaker endpoints, training jobs, etc.
     ├── images/                   # Docker images for model training and model endpoint.
-    ├── server/                   # Configuration of web server for model endpoint.
+    ├── server/                   # Configuration of a nginx web server for the model endpoint.
     ├── .envrc                    # Project-specific environment variables.
     ├── Makefile                  # Project-specific tasks.
     ├── train.py                  # Script for training the model.
