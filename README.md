@@ -21,7 +21,7 @@ The template includes:
 
 The intention with `shapemaker` is to do as much work as possible in automated workflows. However, `shapemaker` offers a lot of nifty shell commands, that you can also use on the fly. Some of these functions are put on display in the video below. *Click to watch*.
 
-[![Watch the video](https://img.youtube.com/vi/XzxKWkj6svc/maxresdefault.jpg)](https://youtu.be/XzxKWkj6svc)
+[![Watch the video](https://img.youtube.com/vi/tn9sbyskPCI/maxresdefault.jpg)](https://youtu.be/tn9sbyskPCI)
 
 ## :computer: Requirements
 
