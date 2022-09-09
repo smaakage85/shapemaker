@@ -54,12 +54,12 @@ The template was tested on Linux Ubuntu 22.04 LTS w/AWS CLI v2.
     ├── .github/    
     │   └── workflows/            # Workflows for automation, CI/CD.
     ├── modelpkg/                 # Python package defining model logic.
-    |   |   construct.py          # Code for constructing the model etc.
+    |   |   construct.py          # Code for constructing and training the model etc.
     │   └── tests/                # Unit tests for model code.
     ├── aws/                      # Shell scripts for integrating the project with Sagemaker.
     ├── configs/                  # Configurations for Sagemaker endpoints, training jobs, etc.
     ├── images/                   # Docker images for model training and model endpoint.
-    ├── server/                   # Configuration of a default NGINX web server for the model endpoint.
+    ├── server/                   # Configuration for a default NGINX web server for the model endpoint.
     ├── .envrc                    # Project-specific environment variables.
     ├── Makefile                  # Command-line functions for project-specific tasks.
     ├── train.py                  # Script for training the model. Builds into the training image.
@@ -69,7 +69,7 @@ The template was tested on Linux Ubuntu 22.04 LTS w/AWS CLI v2.
 
 ## :abc: Command-line Functions
 
-All tasks related to interacting with the model project are implemented with command-line functions in `Makefile`.
+All tasks related to interacting with the model project are implemented with command-line functions in `./Makefile`, i.e. functions are invoked with `make [target]`, e.g. `make build_training_image`.
 
 `make` + <kbd>space</kbd> + <kbd>tab</kbd> + <kbd>tab</kbd> lists all available `make` targets.
 
