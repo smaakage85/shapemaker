@@ -19,7 +19,7 @@ The template includes:
 
 ## :movie_camera: Demo
 
-The intention with `shapemaker` is to do as much work as possible in automated workflows. However, `shapemaker` offers a lot of nifty shell commands, that you can also use on the fly. Some of these functions are put on display in the video below. *Click to watch*.
+Click the screen below to watch a quick walkthrough of some of the features of the 'shapemaker' template. The video goes through how to build training and endpoint images and how to create training jobs and endpoints from the command line. Furthermore I show to enable CI/CD workflows with Github Actions.
 
 [![Watch the video](https://img.youtube.com/vi/tn9sbyskPCI/maxresdefault.jpg)](https://youtu.be/tn9sbyskPCI)
 
