@@ -41,6 +41,9 @@ Click the screen below to watch a quick walkthrough of some of the features of t
 - [python](https://www.python.org/downloads/)
 - [Cookiecutter](https://pypi.org/project/cookiecutter/)
 
+**CI/CD**
+- [Github Actions](https://github.com/features/actions)
+
 *: *if you want to play around, you can create your own free account and use the [AWS Free Tier](https://aws.amazon.com/free) resources free of charge up to specified limits for each service.*
 
 The template was tested on Linux Ubuntu 22.04 LTS w/AWS CLI v2.
