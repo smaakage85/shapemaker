@@ -1,7 +1,6 @@
 # shapemaker <img src='logo.jpg' align="right" height="139" />
 
 ## :eyeglasses: Overview
-
 `shapemaker` is an end-to-end template for Amazon Sagemaker AWS projects aiming for maximum flexibility. 
 
 The template includes:
@@ -18,7 +17,6 @@ The template includes:
 `shapemaker` targets *full-stack* data scientists with intermediate knowledge of python, Amazon Sagemaker as well as AWS in general, docker, shell scripting and development of web applications.
 
 ## :cinema: Demo
-
 Click the screen below to watch a quick walkthrough of some of the most important features of the 'shapemaker' template. The video goes through how to build training and endpoint images and how to create training jobs and endpoints from the command line. Furthermore I show to enable `shapemaker` CI/CD workflows.
 
 [![Watch the video](https://img.youtube.com/vi/tn9sbyskPCI/maxresdefault.jpg)](https://youtu.be/tn9sbyskPCI)
@@ -62,13 +60,12 @@ The template was tested on Linux Ubuntu 22.04 LTS w/AWS CLI v2.
     ├── server/                   # Configuration for a default NGINX web server for the model endpoint.
     ├── .envrc                    # Project-specific environment variables.
     ├── Makefile                  # Command-line functions for project-specific tasks.
-    ├── train.py                  # Script for training the model. Builds into the training image.
-    ├── app.py                    # Application code for the model endpoint. Builds into the endpoint image.
+    ├── train.py                  # Script for training the model. Builds into training image.
+    ├── app.py                    # Application code for the model endpoint. Builds into endpoint image.
     ├── requirements_modelpkg.txt # Python packages required by the model.
     └── requirements_dev.txt      # Other python packages required in development mode.
 
 ## :abc: Command-line Functions
-
 All tasks related to interacting with the model project are implemented with command-line functions in `./Makefile`, i.e. functions are invoked with `make [target]`, e.g. `make build_training_image`.
 
 `make` + <kbd>space</kbd> + <kbd>tab</kbd> + <kbd>tab</kbd> lists all available `make` targets.
