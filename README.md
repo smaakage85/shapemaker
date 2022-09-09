@@ -1,4 +1,4 @@
-# shapemaker <img src='logo.jpg' align="right" height="139" />
+# shapemaker <img src='logo.png' align="right" height="139" />
 
 ## :eyeglasses: Overview
 `shapemaker` is an end-to-end template for Amazon Sagemaker AWS projects aiming for maximum flexibility. 
