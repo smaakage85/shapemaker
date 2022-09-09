@@ -17,7 +17,7 @@ The template includes:
 
 `shapemaker` targets *full-stack* data scientists with intermediate knowledge of python, Amazon Sagemaker as well as AWS in general, docker, shell scripting and development of web applications.
 
-## :movie_camera: Demo
+## :cinema: Demo
 
 Click the screen below to watch a quick walkthrough of some of the most important features of the 'shapemaker' template. The video goes through how to build training and endpoint images and how to create training jobs and endpoints from the command line. Furthermore I show to enable `shapemaker` CI/CD workflows.
 
@@ -67,7 +67,7 @@ The template was tested on Linux Ubuntu 22.04 LTS w/AWS CLI v2.
     ├── requirements_modelpkg.txt # Python packages required by the model.
     └── requirements_dev.txt      # Other python packages required in development mode.
 
-## :file_folder: Tasks
+## :abc: Command-line Functions
 
 All tasks related to interacting with the model project are implemented with command-line functions in `Makefile`.
 
