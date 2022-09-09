@@ -15,7 +15,7 @@ The template includes:
 
 `shapemaker` builds on the [Bring Your Own Container (BYOC)](https://towardsdatascience.com/bring-your-own-container-with-amazon-sagemaker-37211d8412f4) Sagemaker functionality for full developer control.
 
-`shapemaker` targets *full-stack* data scientists with basic knowledge of python, Amazon Sagemaker (BYOC) as well as AWS in general, docker, shell scripting and development of web applications.
+`shapemaker` targets *full-stack* data scientists with intermediate knowledge of python, Amazon Sagemaker as well as AWS in general, docker, shell scripting and development of web applications.
 
 ## :movie_camera: Demo
 
@@ -48,7 +48,7 @@ Click the screen below to watch a quick walkthrough of some of the most importan
 
 The template was tested on Linux Ubuntu 22.04 LTS w/AWS CLI v2.
 
-## :file_folder: Structure
+## :file_folder: Template Structure
 
     ./
     ├── .github/    
@@ -59,20 +59,22 @@ The template was tested on Linux Ubuntu 22.04 LTS w/AWS CLI v2.
     ├── aws/                      # Shell scripts for integrating the project with Sagemaker.
     ├── configs/                  # Configurations for Sagemaker endpoints, training jobs, etc.
     ├── images/                   # Docker images for model training and model endpoint.
-    ├── server/                   # Configuration of a NGINX web server for the model endpoint.
+    ├── server/                   # Configuration of a default NGINX web server for the model endpoint.
     ├── .envrc                    # Project-specific environment variables.
-    ├── Makefile                  # Project-specific tasks.
-    ├── train.py                  # Script for training the model.
-    ├── app.py                    # Application code for the model endpoint.
+    ├── Makefile                  # Command-line functions for project-specific tasks.
+    ├── train.py                  # Script for training the model. Builds into the training image.
+    ├── app.py                    # Application code for the model endpoint. Builds into the endpoint image.
     ├── requirements_modelpkg.txt # Python packages required by the model.
-    └── requirements_dev.txt      # Python packages required in development mode.
+    └── requirements_dev.txt      # Other python packages required in development mode.
 
 ## :file_folder: Tasks
 
-All tasks related to interacting with the model project are implemented with shell functions in `Makefile`.
+All tasks related to interacting with the model project are implemented with command-line functions in `Makefile`.
 
 `make` + <kbd>space</kbd> + <kbd>tab</kbd> + <kbd>tab</kbd> lists all available `make` targets.
 
 ## :repeat: Enable Automation Workflows
+Upload your project to Github and connect the Github Repository with your AWS account by providing your AWS credentials as secrets in your `Github` repository with names:
 
-Connect the Github Repository with your AWS account by providing your AWS credentials as secrets in your `Github` repository with names *AWS_ACCESS_KEY_ID* and *AWS_SECRET_ACCESS_KEY*.
+1. *AWS_ACCESS_KEY_ID*
+2. *AWS_SECRET_ACCESS_KEY*
