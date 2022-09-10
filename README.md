@@ -68,14 +68,14 @@ The inputs for the template are described below:
 | Input | Description |
 | --- | --- |
 | PROJECT_NAME | Name of model project. |
-| PY_VERSION | Which version of python to use. |
-| DIR_MODEL_LOCAL | Local directory for model artifact storage.|
-| DIR_TMP | Temporary files directory. |
+| PY_VERSION | Which version of python to use, e.g. '3.9'. |
+| DIR_MODEL_LOCAL | Local directory for model artifact storage, e.g. './artifacts'.|
+| DIR_TMP | Temporary files directory, e.g. '/tmp'. |
 | AWS_ACCOUNT_ID | 12-digit AWS account ID. |
 | AWS_DEFAULT_REGION | AWS default region. |
 | ECR_REPO | Name of AWS ECR repository, where containers are published. |
 | SAGEMAKER_ROLE | Name of the Sagemaker execution role to be assumed by Sagemaker. |
-| BUCKET_ARTIFACTS | Name of S3 bucket for model artifact storage. **NOTE**: prefix with 'sagemaker' for immediate Sagemaker access. |
+| BUCKET_ARTIFACTS | Name of S3 bucket for model artifact storage. **NOTE**: prefix with 'sagemaker' for immediate Sagemaker access, e.g. 'sagemaker_artifacts_blablabla'. |
 
 **NOTE**: do *NOT* enquote input values.
 
