@@ -109,7 +109,7 @@ To help you navigate in the `shapemaker` template here is an overview of the fol
 ### :shell: Command-line functions
 All tasks related to interacting with the model project are implemented as command-line functions in `./Makefile` implying that functions are invoked with `make [target]`, e.g. `make build_training_image`.
 
-If you want to build, train and deploy the model **on-the-fly** you can do it by invoking a sequence of `make` targets, i.e.:
+If you want to build, train and deploy a model **on-the-fly** you can do it by invoking a sequence of `make` targets, i.e.:
 
 1. `make init`
 2. `make build_training_image`
