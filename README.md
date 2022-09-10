@@ -138,7 +138,7 @@ All workflows can be [run manually](https://docs.github.com/en/actions/managing-
 A big thanks for the inspiration goes to: 
 
 - [Maria Vexlard](https://github.com/m-romanenko) for this blog post on [how to train a model with Amazon Sagemaker BYOC](https://www.sicara.fr/blog-technique/amazon-sagemaker-model-training).
-- [Ram Vegiraju](https://github.com/RamVegiraju) for this blog post on [how to train a model with Amazon Sagemaker BYOC](https://towardsdatascience.com/bring-your-own-container-with-amazon-sagemaker-37211d8412f4). 
+- [Ram Vegiraju](https://github.com/RamVegiraju) for this blog post on [how to create an endpoint with Amazon Sagemaker BYOC](https://towardsdatascience.com/bring-your-own-container-with-amazon-sagemaker-37211d8412f4). 
 
 ## :postbox: Contact
 
