@@ -7,12 +7,20 @@ The template includes:
 
 - a minimalistic template for model code
 - a template for a docker image for model training
-- an endpoint docker image template
+- an endpoint docker image template for real-time inference
 - command line functions for interacting with the model/endpoint
 - command line functions for delivering and integrating the model w/Sagemaker
-- workflows enabling continuous integration/delivery
+- workflows enabling continuous integration/delivery.
 
 `shapemaker` builds on the [Bring Your Own Container (BYOC)](https://towardsdatascience.com/bring-your-own-container-with-amazon-sagemaker-37211d8412f4) Sagemaker functionality for **full developer control**. 
+
+In other words, if you find, that Sagemaker *does not offer enough flexibility* with respect to either
+
+1. customization of training jobs
+2. customization of endpoints
+3. customization of how to serve endpoints
+
+out-of-the-box, then `shapemaker` might be a good fit for you.
 
 `shapemaker` targets *full-stack* data scientists with intermediate knowledge of python, Amazon Sagemaker as well as AWS in general, docker, shell scripting and development of web applications.
 
@@ -88,13 +96,15 @@ To help you navigate in the `shapemaker` template here is an overview of the fol
     ├── aws/                      # Shell scripts for integrating the project with Sagemaker.
     ├── configs/                  # Configurations for Sagemaker endpoints, training jobs, etc.
     ├── images/                   # Docker images for model training and model endpoint.
-    ├── server/                   # Configuration for a default NGINX web server for the model endpoint.
+    ├── server/                   # Configuration for a default NGINX web server for the model endpoint.*
     ├── .envrc                    # Project-specific environment variables.
     ├── Makefile                  # Command-line functions for project-specific tasks.
     ├── train.py                  # Script for training the model. Builds into training image.
     ├── app.py                    # Application code for the model endpoint. Builds into endpoint image.
     ├── requirements_modelpkg.txt # Python packages required by the model.
     └── requirements_dev.txt      # .. All other python packages needed in development mode.
+
+*: template from [AWS example](https://github.com/RamVegiraju/SageMaker-Deployment/tree/master/RealTime/BYOC/PreTrained-Examples/SpacyNER).
 
 ### :shell: Command-line functions
 All tasks related to interacting with the model project are implemented as command-line functions in `./Makefile` implying that functions are invoked with `make [target]`, e.g. `make build_training_image`.
@@ -121,7 +131,9 @@ To enable CI/CD workflows, upload your project to Github and connect the Github 
 
 By default, every commit to `main` triggers a workflow `./github/workflows/deliver_images.yaml`, that runs unit tests and builds and pushes training and endpoint images. 
 
-### Contact
+All workflows can be [triggered manually](https://docs.github.com/en/actions/managing-workflow-runs/manually-running-a-workflow).
+
+### :postbox: Contact
 
 Please direct any questions and feedbacks to [me](mailto:lars_kjeldgaard@hotmail.com)\!
 
