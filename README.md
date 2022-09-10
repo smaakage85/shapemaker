@@ -133,12 +133,12 @@ By default, every commit to `main` triggers a workflow `./github/workflows/deliv
 
 All workflows can be [run manually](https://docs.github.com/en/actions/managing-workflow-runs/manually-running-a-workflow).
 
-## Shout-outs
+## :loudspeaker: Shout-outs
 
-A big thanks for the inspiration to: 
+A big thanks for the inspiration goes to: 
 
-- [Maria Vexlard](https://github.com/m-romanenko) for [this blog post](https://www.sicara.fr/blog-technique/amazon-sagemaker-model-training).
-- [Ram Vegiraju](https://github.com/RamVegiraju) for [this blog post](https://towardsdatascience.com/bring-your-own-container-with-amazon-sagemaker-37211d8412f4). 
+- [Maria Vexlard](https://github.com/m-romanenko) for this blog post on [how to train a model with Amazon Sagemaker BYOC](https://www.sicara.fr/blog-technique/amazon-sagemaker-model-training).
+- [Ram Vegiraju](https://github.com/RamVegiraju) for this blog post on [how to train a model with Amazon Sagemaker BYOC](https://towardsdatascience.com/bring-your-own-container-with-amazon-sagemaker-37211d8412f4). 
 
 ## :postbox: Contact
 
