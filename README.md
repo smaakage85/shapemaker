@@ -12,7 +12,7 @@ The template includes:
 - functions for delivering and integrating the model w/Sagemaker
 - workflows enabling continuous integration/delivery
 
-`shapemaker` builds on the [Bring Your Own Container (BYOC)](https://towardsdatascience.com/bring-your-own-container-with-amazon-sagemaker-37211d8412f4) Sagemaker functionality for full developer control.
+`shapemaker` builds on the [Bring Your Own Container (BYOC)](https://towardsdatascience.com/bring-your-own-container-with-amazon-sagemaker-37211d8412f4) Sagemaker functionality for **full developer control**.
 
 `shapemaker` targets *full-stack* data scientists with intermediate knowledge of python, Amazon Sagemaker as well as AWS in general, docker, shell scripting and development of web applications.
 
@@ -51,7 +51,9 @@ The template was tested on Linux Ubuntu 22.04 LTS w/AWS CLI v2.
 ### :new: Create project from template
 Create a project from the `shapemaker` template using `Cookiecutter`:
 
-`cookiecutter gh:smaakage85/shapemaker`
+```
+cookiecutter gh:smaakage85/shapemaker
+```
 
 The inputs for the template are described below:
 
@@ -67,9 +69,15 @@ The inputs for the template are described below:
 | SAGEMAKER_ROLE | Name of the Sagemaker execution role to be assumed by Sagemaker. |
 | BUCKET_ARTIFACTS | Name of S3 bucket for model artifact storage. **NOTE**: prefix with 'sagemaker' for immediate Sagemaker access. |
 
-**NOTE**: do not enquote input values.
+**NOTE**: do *NOT* enquote input values.
 
-### :file_folder: Structure
+### Set-up project
+Initialize project by executing `make init` from the command line in the project directory. The `init` target makes the included shell scripts executable and provisions relevant AWS infrastructure.
+
+Export project-specific environment variables automatically with `direnv`, i.e. by invoking `direnv allow`.
+
+### :file_folder: Template structure
+To help you navigate in the `shapemaker` template here is an overview of the folder structure:
 
     ./
     ├── .github/    
@@ -88,8 +96,18 @@ The inputs for the template are described below:
     ├── requirements_modelpkg.txt # Python packages required by the model.
     └── requirements_dev.txt      # Other python packages required in development mode.
 
-### :abc: Built-in command-line functions
+### :abc: Build, train and deploy model **on-the-fly**
 All tasks related to interacting with the model project are implemented as command-line functions in `./Makefile`, i.e. functions are invoked with `make [target]`, e.g. `make build_training_image`.
+
+If you want to build, train and deploy the model **on-the-fly** you can do it by invoking a sequence of `make` targets, i.e.:
+
+1. `make init`
+2. `make build_training_image`
+3. `make push_training_image`
+4. `make create_training_job`
+5. `make build_endpoint_image`
+6. `make push_endpoint_image`
+7. `make create_endpoint`
 
 `make` + <kbd>space</kbd> + <kbd>tab</kbd> + <kbd>tab</kbd> lists all available `make` targets.
 
