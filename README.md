@@ -46,7 +46,30 @@ Click the screen below to watch a quick walkthrough of some of the most importan
 
 The template was tested on Linux Ubuntu 22.04 LTS w/AWS CLI v2.
 
-## :file_folder: Template Structure
+## :information_source: How to use
+
+### :new: Create project from template
+Create a project from the `shapemaker` template using `Cookiecutter`:
+
+`cookiecutter gh:smaakage85/shapemaker`
+
+The inputs for the template are described below:
+
+| Input | Description |
+| --- | --- |
+| PROJECT_NAME | Name of model project. |
+| PY_VERSION | Which version of python to use. |
+| DIR_MODEL_LOCAL | Local directory for model artifact storage.|
+| DIR_TMP | Temporary files directory. |
+| AWS_ACCOUNT_ID | 12-digit AWS account ID. |
+| AWS_DEFAULT_REGION | AWS default region. |
+| ECR_REPO | Name of AWS ECR repository, where containers are published. |
+| SAGEMAKER_ROLE | Name of the Sagemaker execution role to be assumed by Sagemaker. |
+| BUCKET_ARTIFACTS | Name of S3 bucket for model artifact storage. **NOTE**: prefix with 'sagemaker' for immediate Sagemaker access. |
+
+**NOTE**: do not enquote input values.
+
+### :file_folder: Structure
 
     ./
     ├── .github/    
@@ -65,13 +88,14 @@ The template was tested on Linux Ubuntu 22.04 LTS w/AWS CLI v2.
     ├── requirements_modelpkg.txt # Python packages required by the model.
     └── requirements_dev.txt      # Other python packages required in development mode.
 
-## :abc: Command-line Functions
-All tasks related to interacting with the model project are implemented with command-line functions in `./Makefile`, i.e. functions are invoked with `make [target]`, e.g. `make build_training_image`.
+### :abc: Built-in command-line functions
+All tasks related to interacting with the model project are implemented as command-line functions in `./Makefile`, i.e. functions are invoked with `make [target]`, e.g. `make build_training_image`.
 
 `make` + <kbd>space</kbd> + <kbd>tab</kbd> + <kbd>tab</kbd> lists all available `make` targets.
 
-## :repeat: Enable Automation Workflows
+## :repeat: Enable CI/CD Workflows
 Upload your project to Github and connect the Github Repository with your AWS account by providing your AWS credentials as secrets in your `Github` repository with names:
 
 1. *AWS_ACCESS_KEY_ID*
 2. *AWS_SECRET_ACCESS_KEY*
+
