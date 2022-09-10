@@ -79,8 +79,6 @@ The inputs for the template are described below:
 
 **NOTE**: do *NOT* enquote input values.
 
-Obviously, depending on your use-case the individual files will need different levels of modification.
-
 ### :ok: Set-up project
 Initialize project by executing `make init` from the command line in the project directory. The `init` target makes the included shell scripts executable and provisions relevant AWS infrastructure.
 
@@ -107,6 +105,8 @@ To help you navigate in the `shapemaker` template here is an overview of the fol
     └── requirements_dev.txt      # .. All other python packages needed in development mode.
 
 *: template from [AWS example](https://github.com/RamVegiraju/SageMaker-Deployment/tree/master/RealTime/BYOC/PreTrained-Examples/SpacyNER).
+
+The level of modification needed for the individual files will depend on your specific use-case.
 
 ### :shell: Command-line functions
 All tasks related to interacting with the model project are implemented as command-line functions in `./Makefile` implying that functions are invoked with `make [target]`, e.g. `make build_training_image`.
