@@ -14,18 +14,18 @@ The template includes:
 
 `shapemaker` builds on the [Bring Your Own Container (BYOC)](https://towardsdatascience.com/bring-your-own-container-with-amazon-sagemaker-37211d8412f4) Sagemaker functionality for **full developer control**. 
 
-In other words, if you find, that Sagemaker *does not offer enough flexibility* with respect to either
+In other words, if you find, Sagemaker *does not offer enough flexibility* out-of-the-box with respect to either
 
 1. customization of training jobs
 2. customization of endpoints
 3. customization of how to serve endpoints
 
-out-of-the-box, then `shapemaker` might be a good fit for you.
+then `shapemaker` might be a good fit for you.
 
 `shapemaker` targets *full-stack* data scientists with intermediate knowledge of python, Amazon Sagemaker as well as AWS in general, docker, shell scripting and development of web applications.
 
 ## :cinema: Demo
-Click the screen below to watch a quick walkthrough of some of the most important features of the 'shapemaker' template. The video goes through how to build training and endpoint images and how to create training jobs and endpoints from the command line. Furthermore I show to enable `shapemaker` CI/CD workflows.
+Click the screen below to watch a quick walkthrough of some of the most important features of the 'shapemaker' template. The video goes through how to build training and endpoint images and how to create training jobs and endpoints from the command line. Furthermore I show to enable (and execute) `shapemaker` CI/CD workflows.
 
 [![Watch the video](https://img.youtube.com/vi/tn9sbyskPCI/maxresdefault.jpg)](https://youtu.be/tn9sbyskPCI)
 
@@ -121,7 +121,7 @@ If you want to build, train and deploy the model **on-the-fly** you can do it by
 
 `make` + <kbd>space</kbd> + <kbd>tab</kbd> + <kbd>tab</kbd> lists all available `make` targets.
 
-## :repeat: CI/CD Workflows
+### :repeat: CI/CD Workflows
 `shapemaker` ships with a number of automation (CI/CD) workflows implemented with Github Actions.
 
 To enable CI/CD workflows, upload your project to Github and connect the Github repository with your AWS account by providing your AWS credentials as `Github` Secrets. Secrets should have names:
@@ -131,9 +131,16 @@ To enable CI/CD workflows, upload your project to Github and connect the Github 
 
 By default, every commit to `main` triggers a workflow `./github/workflows/deliver_images.yaml`, that runs unit tests and builds and pushes training and endpoint images. 
 
-All workflows can be [triggered manually](https://docs.github.com/en/actions/managing-workflow-runs/manually-running-a-workflow).
+All workflows can be [run manually](https://docs.github.com/en/actions/managing-workflow-runs/manually-running-a-workflow).
 
-### :postbox: Contact
+## Shout-outs
+
+A big thanks for the inspiration to: 
+
+- [Maria Vexlard](https://github.com/m-romanenko) for [this blog post](https://www.sicara.fr/blog-technique/amazon-sagemaker-model-training).
+- [Ram Vegiraju](https://github.com/RamVegiraju) for [this blog post](https://towardsdatascience.com/bring-your-own-container-with-amazon-sagemaker-37211d8412f4). 
+
+## :postbox: Contact
 
 Please direct any questions and feedbacks to [me](mailto:lars_kjeldgaard@hotmail.com)\!
 
