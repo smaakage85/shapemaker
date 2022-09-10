@@ -79,6 +79,8 @@ The inputs for the template are described below:
 
 **NOTE**: do *NOT* enquote input values.
 
+Obviously, depending on your use-case the individual files will need different levels of modification.
+
 ### :ok: Set-up project
 Initialize project by executing `make init` from the command line in the project directory. The `init` target makes the included shell scripts executable and provisions relevant AWS infrastructure.
 
