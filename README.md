@@ -121,7 +121,7 @@ If you want to build, train and deploy a model **on-the-fly** you can do it by i
 
 `make` + <kbd>space</kbd> + <kbd>tab</kbd> + <kbd>tab</kbd> lists all available `make` targets.
 
-### :repeat: CI/CD Workflows
+### :repeat: CI/CD workflows
 `shapemaker` ships with a number of automation (CI/CD) workflows implemented with Github Actions.
 
 To enable CI/CD workflows, upload your project to Github and connect the Github repository with your AWS account by providing your AWS credentials as `Github` Secrets. Secrets should have names:
