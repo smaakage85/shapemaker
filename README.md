@@ -8,11 +8,11 @@ The template includes:
 - a minimalistic template for model code
 - a template for a docker image for model training
 - an endpoint docker image template
-- functions for interacting with the model/endpoint
-- functions for delivering and integrating the model w/Sagemaker
+- command line functions for interacting with the model/endpoint
+- command line functions for delivering and integrating the model w/Sagemaker
 - workflows enabling continuous integration/delivery
 
-`shapemaker` builds on the [Bring Your Own Container (BYOC)](https://towardsdatascience.com/bring-your-own-container-with-amazon-sagemaker-37211d8412f4) Sagemaker functionality for **full developer control**.
+`shapemaker` builds on the [Bring Your Own Container (BYOC)](https://towardsdatascience.com/bring-your-own-container-with-amazon-sagemaker-37211d8412f4) Sagemaker functionality for **full developer control**. 
 
 `shapemaker` targets *full-stack* data scientists with intermediate knowledge of python, Amazon Sagemaker as well as AWS in general, docker, shell scripting and development of web applications.
 
@@ -71,7 +71,7 @@ The inputs for the template are described below:
 
 **NOTE**: do *NOT* enquote input values.
 
-### Set-up project
+### :ok: Set-up project
 Initialize project by executing `make init` from the command line in the project directory. The `init` target makes the included shell scripts executable and provisions relevant AWS infrastructure.
 
 Export project-specific environment variables automatically with `direnv`, i.e. by invoking `direnv allow`.
@@ -94,10 +94,10 @@ To help you navigate in the `shapemaker` template here is an overview of the fol
     ├── train.py                  # Script for training the model. Builds into training image.
     ├── app.py                    # Application code for the model endpoint. Builds into endpoint image.
     ├── requirements_modelpkg.txt # Python packages required by the model.
-    └── requirements_dev.txt      # Other python packages required in development mode.
+    └── requirements_dev.txt      # .. All other python packages needed in development mode.
 
-### :abc: Build, train and deploy model **on-the-fly**
-All tasks related to interacting with the model project are implemented as command-line functions in `./Makefile`, i.e. functions are invoked with `make [target]`, e.g. `make build_training_image`.
+### :shell: Command-line functions
+All tasks related to interacting with the model project are implemented as command-line functions in `./Makefile` implying that functions are invoked with `make [target]`, e.g. `make build_training_image`.
 
 If you want to build, train and deploy the model **on-the-fly** you can do it by invoking a sequence of `make` targets, i.e.:
 
@@ -111,9 +111,21 @@ If you want to build, train and deploy the model **on-the-fly** you can do it by
 
 `make` + <kbd>space</kbd> + <kbd>tab</kbd> + <kbd>tab</kbd> lists all available `make` targets.
 
-## :repeat: Enable CI/CD Workflows
-Upload your project to Github and connect the Github Repository with your AWS account by providing your AWS credentials as secrets in your `Github` repository with names:
+## :repeat: CI/CD Workflows
+`shapemaker` ships with a number of automation (CI/CD) workflows implemented with Github Actions.
+
+To enable CI/CD workflows, upload your project to Github and connect the Github repository with your AWS account by providing your AWS credentials as `Github` Secrets. Secrets should have names:
 
 1. *AWS_ACCESS_KEY_ID*
 2. *AWS_SECRET_ACCESS_KEY*
+
+By default, every commit to `main` triggers a workflow `./github/workflows/deliver_images.yaml`, that runs unit tests and builds and pushes training and endpoint images. 
+
+### Contact
+
+Please direct any questions and feedbacks to [me](mailto:lars_kjeldgaard@hotmail.com)\!
+
+If you want to contribute, open a [PR](https://github.com/smaakage85/shapemaker/pulls).
+
+If you encounter a bug or want to suggest an enhancement, please [open an issue](https://github.com/smaakage85/shapemaker/issues).
 
