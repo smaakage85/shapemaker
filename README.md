@@ -8,8 +8,8 @@ The template includes:
 - a minimalistic template for model code
 - a template for a docker image for model training
 - an endpoint docker image template for real-time inference
-- command line functions for interacting with the model/endpoint
-- command line functions for delivering and integrating the model w/Sagemaker
+- command-line functions for interacting with the model/endpoint
+- command-line functions for delivering and integrating the model w/Sagemaker
 - workflows enabling continuous integration/delivery.
 
 `shapemaker` builds on the [Bring Your Own Container (BYOC)](https://towardsdatascience.com/bring-your-own-container-with-amazon-sagemaker-37211d8412f4) Sagemaker functionality for **full developer control**. 
