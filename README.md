@@ -14,11 +14,11 @@ The template includes:
 
 `shapemaker` builds on the [Bring Your Own Container (BYOC)](https://towardsdatascience.com/bring-your-own-container-with-amazon-sagemaker-37211d8412f4) Sagemaker functionality for **full developer control**. 
 
-In other words, if you find, Sagemaker *does not offer enough flexibility* out-of-the-box with respect to either
+In other words, if you find, Sagemaker *does not offer enough flexibility* out-of-the-box with respect to customizing either
 
-1. customization of training jobs
-2. customization of endpoints
-3. customization of how to serve endpoints
+1. training jobs
+2. endpoints or
+3. how to serve endpoints
 
 then `shapemaker` might be a good fit for you.
 
