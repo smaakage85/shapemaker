@@ -1,7 +1,7 @@
 # shapemaker <img src='logo.png' align="right" height="139" />
 
 ## :eyeglasses: Overview
-`shapemaker` is an end-to-end template for Amazon Sagemaker AWS projects aiming for maximum flexibility. 
+`shapemaker` is an end-to-end template for Amazon SageMaker AWS projects aiming for maximum flexibility. 
 
 The template includes:
 
@@ -12,9 +12,9 @@ The template includes:
 - command-line functions for delivering and integrating the model w/Sagemaker
 - workflows enabling continuous integration/delivery.
 
-`shapemaker` builds on the [Bring Your Own Container (BYOC)](https://towardsdatascience.com/bring-your-own-container-with-amazon-sagemaker-37211d8412f4) Sagemaker functionality for **full developer control**. 
+`shapemaker` builds on the [Bring Your Own Container (BYOC)](https://towardsdatascience.com/bring-your-own-container-with-amazon-sagemaker-37211d8412f4) SageMaker functionality for **full developer control**. 
 
-In other words, if you find, Sagemaker *does not offer enough flexibility* out-of-the-box with respect to customizing either
+In other words, if you find, SageMaker *does not offer enough flexibility* out-of-the-box with respect to customizing either
 
 1. training jobs
 2. endpoints or
