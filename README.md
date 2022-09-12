@@ -22,7 +22,7 @@ In other words, if you find, SageMaker *does not offer enough flexibility* out-o
 
 then `shapemaker` might be a good fit for you.
 
-`shapemaker` targets *full-stack* data scientists with intermediate knowledge of python, Amazon Sagemaker as well as AWS in general, docker, shell scripting and development of web applications.
+`shapemaker` targets *full-stack* data scientists with intermediate knowledge of python, Amazon SageMaker as well as AWS in general, docker, shell scripting and development of web applications.
 
 ## :cinema: Demo
 Click the screen below to watch a quick walkthrough of some of the most important features of the 'shapemaker' template. The video goes through how to build training and endpoint images and how to create training jobs and endpoints from the command line. Furthermore I show to enable `shapemaker` CI/CD workflows.
@@ -139,8 +139,8 @@ All workflows can be [run manually](https://docs.github.com/en/actions/managing-
 
 A big thanks for the inspiration goes to: 
 
-- [Maria Vexlard](https://github.com/m-romanenko) for [this blog post](https://www.sicara.fr/blog-technique/amazon-sagemaker-model-training) on how to train a model with Amazon Sagemaker BYOC.
-- [Ram Vegiraju](https://github.com/RamVegiraju) for [this blog post](https://towardsdatascience.com/bring-your-own-container-with-amazon-sagemaker-37211d8412f4) on how to create an endpoint with Amazon Sagemaker BYOC. 
+- [Maria Vexlard](https://github.com/m-romanenko) for [this blog post](https://www.sicara.fr/blog-technique/amazon-sagemaker-model-training) on how to train a model with Amazon SageMaker BYOC.
+- [Ram Vegiraju](https://github.com/RamVegiraju) for [this blog post](https://towardsdatascience.com/bring-your-own-container-with-amazon-sagemaker-37211d8412f4) on how to create an endpoint with Amazon SageMaker BYOC. 
 
 ## :mailbox: Contact
 
