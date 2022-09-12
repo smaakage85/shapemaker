@@ -104,7 +104,7 @@ To help you navigate in the `shapemaker` template here is an overview of the fol
     ├── requirements_modelpkg.txt # Python packages required by the model.
     └── requirements_dev.txt      # .. All other python packages needed in development mode.
 
-*: template from [AWS example](https://github.com/RamVegiraju/SageMaker-Deployment/tree/master/RealTime/BYOC/PreTrained-Examples/SpacyNER).
+*: copy pasta from [AWS example](https://github.com/RamVegiraju/SageMaker-Deployment/tree/master/RealTime/BYOC/PreTrained-Examples/SpacyNER).
 
 The level of modification needed for the individual files will depend on your specific use-case.
 
