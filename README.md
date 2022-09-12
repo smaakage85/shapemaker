@@ -79,7 +79,7 @@ The inputs for the template are described below:
 
 **NOTE**: do *NOT* enquote input values.
 
-### :ok: Set-up project
+### :wrench: Set-up project
 Initialize project by executing `make init` from the command line in the project directory. The `init` target makes the included shell scripts executable and provisions relevant AWS infrastructure.
 
 Export project-specific environment variables automatically with `direnv`, i.e. by invoking `direnv allow`.
@@ -142,7 +142,7 @@ A big thanks for the inspiration goes to:
 - [Maria Vexlard](https://github.com/m-romanenko) for [this blog post](https://www.sicara.fr/blog-technique/amazon-sagemaker-model-training) on how to train a model with Amazon Sagemaker BYOC.
 - [Ram Vegiraju](https://github.com/RamVegiraju) for [this blog post](https://towardsdatascience.com/bring-your-own-container-with-amazon-sagemaker-37211d8412f4) on how to create an endpoint with Amazon Sagemaker BYOC. 
 
-## :postbox: Contact
+## :mailbox: Contact
 
 Please direct any questions and feedbacks to [me](mailto:lars_kjeldgaard@hotmail.com)\!
 
