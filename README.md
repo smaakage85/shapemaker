@@ -3,6 +3,16 @@
 ## :eyeglasses: Overview
 `shapemaker` is an end-to-end template for Amazon SageMaker AWS projects aiming for maximum flexibility. 
 
+If you find, SageMaker *does not offer enough flexibility* out-of-the-box with respect to customizing either
+
+1. training jobs
+2. endpoints or
+3. how to serve endpoints
+
+then `shapemaker` might be a good fit for you.
+
+`shapemaker` builds on the [Bring Your Own Container (BYOC)](https://towardsdatascience.com/bring-your-own-container-with-amazon-sagemaker-37211d8412f4) SageMaker functionality for **full developer control**. 
+
 The template includes:
 
 - a minimalistic template for model code
@@ -12,20 +22,10 @@ The template includes:
 - command-line functions for delivering and integrating the model w/SageMaker
 - workflows enabling continuous integration/delivery.
 
-`shapemaker` builds on the [Bring Your Own Container (BYOC)](https://towardsdatascience.com/bring-your-own-container-with-amazon-sagemaker-37211d8412f4) SageMaker functionality for **full developer control**. 
-
-If you find, SageMaker *does not offer enough flexibility* out-of-the-box with respect to customizing either
-
-1. training jobs
-2. endpoints or
-3. how to serve endpoints
-
-then `shapemaker` might be a good fit for you.
-
 `shapemaker` targets *full-stack* data scientists with intermediate knowledge of python, Amazon SageMaker as well as AWS in general, docker, shell scripting and development of web applications.
 
 ## :cinema: Demo
-Click the screen below to watch a quick walkthrough of some of the most important features of the 'shapemaker' template. The video goes through how to build training and endpoint images and how to create training jobs and endpoints from the command line. Furthermore I show to enable `shapemaker` CI/CD workflows.
+Click the screen below to watch a quick walkthrough of some of the most important features of the 'shapemaker' template. The video goes through how to build training and endpoint images and how to create training jobs and endpoints from the command line. Furthermore I show how to enable `shapemaker` CI/CD workflows.
 
 [![Watch the video](https://img.youtube.com/vi/tn9sbyskPCI/maxresdefault.jpg)](https://youtu.be/tn9sbyskPCI)
 
