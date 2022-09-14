@@ -14,7 +14,7 @@ The template includes:
 
 `shapemaker` builds on the [Bring Your Own Container (BYOC)](https://towardsdatascience.com/bring-your-own-container-with-amazon-sagemaker-37211d8412f4) SageMaker functionality for **full developer control**. 
 
-In other words, if you find, SageMaker *does not offer enough flexibility* out-of-the-box with respect to customizing either
+If you find, SageMaker *does not offer enough flexibility* out-of-the-box with respect to customizing either
 
 1. training jobs
 2. endpoints or
