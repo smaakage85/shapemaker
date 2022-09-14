@@ -3,7 +3,7 @@
 ## :eyeglasses: Overview
 `shapemaker` is an end-to-end template for Amazon SageMaker AWS projects aiming for maximum flexibility. 
 
-If you find, SageMaker *does not offer enough flexibility* out-of-the-box with respect to customizing either
+If you find, that SageMaker *does not offer enough flexibility* out-of-the-box with respect to customizing either
 
 1. training jobs
 2. endpoints or
