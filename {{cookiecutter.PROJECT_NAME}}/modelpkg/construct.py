@@ -25,7 +25,7 @@ def simulate_salaries(n: int = 1000, sigma: float = 1e+3) -> tuple:
     logger.info(f'Simulating {n} observations')
     age = np.random.randint(size=n, low=20, high=70)
     e = np.random.randn(n) * sigma
-    salary = 1e+3 * np.array(age) + e
+    salary = sigma * np.array(age) + e
     return age, salary
 
 
